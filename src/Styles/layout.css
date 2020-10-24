@@ -1,11 +1,11 @@
 html * {
     margin: 0px;
     padding: 0px;
-    font-family: "Arial Rounded MT Bold";
+    font-family: "Arial Rounded MT Bold", serif;
 
 }
 .navigationBar{
-    height: 20px;
+    height: 40px;
     width: 100vw;
     background-color: black;
 }
@@ -43,8 +43,8 @@ html * {
     width: 100vw;
     height: auto;
 }
-banner-text-min p {
-    font-family: Calibri;
+.banner-text-min p {
+    font-family: Calibri, serif;
     font-size:20px;
 }
 .banner .banner-text-min{
@@ -65,7 +65,7 @@ banner-text-min p {
     z-index: 101;
 }
 .banner-text p{
-    font-family: Calibri;
+    font-family: Calibri, serif;
     font-size: 60px;
 }
 
@@ -78,9 +78,3 @@ width: 100vw;
     z-index: 100;
 }
 
-
-
-
-body {
-
-}
