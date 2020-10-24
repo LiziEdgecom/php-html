@@ -38,6 +38,47 @@ html * {
 
 }
 
+.banner{
+    position:relative;
+    width: 100vw;
+    height: auto;
+}
+banner-text-min p {
+    font-family: Calibri;
+    font-size:20px;
+}
+.banner .banner-text-min{
+    color: #fff8f9;
+    top: 43vw;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    z-index: 101;
+}
+
+.banner .banner-text{
+    color: #fff8f9;
+    top: 40vw;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    z-index: 101;
+}
+.banner-text p{
+    font-family: Calibri;
+    font-size: 60px;
+}
+
+.banner img {
+width: 100vw;
+    height: auto;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+    z-index: 100;
+}
+
+
 
 
 body {
