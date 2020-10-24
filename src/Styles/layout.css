@@ -1,0 +1,42 @@
+html * {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Arial Rounded MT Bold";
+
+}
+.navigationBar{
+    height: 50px;
+    width: 100vw;
+    background-color: black;
+}
+
+.navigationBar a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+.navigationBar ul{
+    list-style-type: none;
+    width: 100%;
+}
+
+
+.navigationBar ul li {
+    float: left;
+    padding-top: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 40px;
+    line-height: 37px;
+    padding-top: 1px;
+}
+
+.navigationBar ul li :hover{
+    background-color: #a1a1a1;
+}
+
+body {
+
+}
