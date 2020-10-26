@@ -6,7 +6,7 @@ html * {
 }
 .navigationBar{
     height: 40px;
-    width: 100vw;
+    width: 100%;
     background-color: black;
 }
 
@@ -41,33 +41,28 @@ html * {
 .banner{
 
     position:relative;
-    width: 100vw;
+    width: 100%;
     height: auto;
 }
 
 .banner .banner-text{
-    color: #f50800;
-    top: 40vw;
+    color: #a1a1a1;
     width: 100%;
     text-align: center;
-    position: relative;
+    position: fixed;
     z-index: 101;
-    margin-bottom: 20px}
-
-.banner .banner-text{
-    margin-top: 20px;
-    font-family: Calibri, serif;
     font-size: 100px;
-    position: relative;
+    font-family: Calibri, serif;
 }
 
+
 .banner img {
-    width: 100vw;
+    width: 100%;
     height: auto;
     margin: auto;
     min-width: 50%;
     min-height: 50%;
-    z-index: 100;
+    z-index: 0;
 }
 
 body{   }
