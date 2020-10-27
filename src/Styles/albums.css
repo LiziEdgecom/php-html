@@ -21,6 +21,3 @@
     display: inline-block;
     list-style-type: none;
 }
-.albums  ul li:hover{
-  image-resolution:snap ;
-}
