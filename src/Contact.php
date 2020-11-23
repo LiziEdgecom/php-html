@@ -25,6 +25,6 @@
     </ul>
 
 </div>
-<p>in development : contatc me on lizon.matus@gmail.com<p>
+<p>in development : contact me on lizon.matus@gmail.com<p>
 </body>
 </html>
