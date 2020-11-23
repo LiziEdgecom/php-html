@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set('Europe/Bratislava');
 include 'comments.inc.php';
-include 'dbd.inc';
+include 'dbd.inc.php';
 ?>
 
 
