@@ -12,16 +12,16 @@
 <div class="navigationBar">
     <ul>
         <li>
-            <a href="index.html">Home</a>
+            <a href="index.php">Home</a>
         </li>
         <li>
-            <a href="./About.html">About</a>
+            <a href="About.php">About</a>
         </li>
         <li>
-            <a href="Albums.html">Albums</a>
+            <a href="Albums.php">Albums</a>
         </li>
         <li>
-            <a href="Contact.html">Contact</a>
+            <a href="Contact.php">Contact</a>
         </li>
 
     </ul>
