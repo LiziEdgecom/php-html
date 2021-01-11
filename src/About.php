@@ -1,31 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <base href="."/>
-    <meta charset="UTF-8">
-    <title>About he Band</title>
-    <link href="Styles/layout.css" rel="stylesheet" />
-    <link href="Styles/About_layout.css" rel="stylesheet" />
+<?php
+include_once 'Header.php'
+?>
 
-</head>
-<body>
-<div class="navigationBar">
-    <ul>
-        <li>
-            <a href="index.php">Home</a>
-        </li>
-        <li>
-            <a href="About.php">About</a>
-        </li>
-        <li>
-            <a href="Albums.php">Albums</a>
-        </li>
-        <li>
-            <a href="Contact.php">Contact</a>
-        </li>
-
-    </ul>
-</div>
 <div class="header">
     <h2>The band</h2>
     <p>We love music</p>
@@ -39,5 +15,6 @@
 </div>
 </div>
 
-</body>
-</html>
+<?php
+include_once 'Footer.php'
+?>
