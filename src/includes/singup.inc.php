@@ -2,30 +2,45 @@
 
 <?php
 
+include 'dbd.inc.php';
+include 'functions.inc.php';
+if(isset($_POST["submit"])){
 
-function setComment($conn) {
-    if(isset($_POST['commentSubmit']) ){
-        $uid = $_POST['UID'];
-        $date = $_POST['date'];
-        $message = $_POST['message'];
+    $name  = $_POST["name"];
+    $email = $_POST["email"];
+    $username  = $_POST["UID"];
+    $pwd  = $_POST["pwd"];
+    $pwdRepeat  = $_POST["pwdrepeat"];
 
-        $sql = "INSERT INTO comments (UID,Date,context) VALUES ('$uid','$date','$message')";
 
-        $result = $conn->query($sql);
+
+    if(emptyInputSignup($name,$email,$username,$pwd,$pwdRepeat) !== false){
+        header("location: ../SignUp.php?error=emptyinput");
+        exit();
     }
+    if(invalidUid($username) !== false){
+        header("location: ../SignUp.php?error=invalidUid");
+        exit();
+    }
+    if(invalidEmail($email) !== false){
+        header("location: ../SignUp.php?error=invalidEmail");
+        exit();
+    }
+    if(pwdmatch($pwd,$pwdRepeat) !== false){
+        header("location: ../SignUp.php?error=pwdNoMatch");
+        exit();
+    }
+    if(uidExist($conn,$username,$email) !== false){
+        header("location: ../SignUp.php?error=usernameTaken");
+        exit();
+    }
+    createUser($conn,$name,$email,$username,$pwd);
+
 
 }
-function getComment($conn) {
-    $sql = "SELECT * FROM comments";
-    $result = $conn->query($sql);
-    $row = $result->fetch_assoc();
-    while ($row = $result->fetch_assoc()){
-        echo "<div class='comment-box '>";
-        echo $row['UID']."<br>";
-        echo $row['Date']."<br>";
-        echo nl2br($row['context']);
-        echo "</div>";
-    }
+else{
+    header("location: ../SignUp.php");
+    exit();
 
 }
 
