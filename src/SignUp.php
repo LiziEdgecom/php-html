@@ -10,8 +10,8 @@ include_once 'Header.php'
                 <label for="name" >Full name</label>
             </div>
             <div class="col-75">
-                <input type="text" name="name" placeholder="Your name..">
-            </div>
+                 <input type="text" name="name" placeholder="Your name..">
+             </div>
 
             <div class="col-25">
                 <label for="email" >Email adress</label>

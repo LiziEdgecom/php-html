@@ -72,7 +72,7 @@ function createUser($conn,$name,$email,$username,$pwd){
     }
     $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 
-    mysqli_stmt_bind_param($stmt, "ssss" , $username, $email, $username, $hashedPwd);
+    mysqli_stmt_bind_param($stmt, "ssss" , $name, $email, $username, $hashedPwd);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("location: ../SignUp.php?error=none");
@@ -109,6 +109,8 @@ function loginUser($conn,$username,$pwd){
         session_start();
         $_SESSION["userID"]= $uidExist["userID"];
         $_SESSION["UID"]= $uidExist["UID"];
+        $_SESSION["userEmail"]= $uidExist["email"];
+
         header("location:../index.php");
         exit();
     };

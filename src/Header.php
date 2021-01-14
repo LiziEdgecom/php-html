@@ -12,6 +12,7 @@
           crossorigin="anonymous">
     <link href="Styles/layout.css" rel="stylesheet"/>
 </head>
+
 <body>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <a href="#" class="navbar-brand">Five fingers death punch</a>
