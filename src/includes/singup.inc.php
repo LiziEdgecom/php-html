@@ -39,7 +39,7 @@ if(isset($_POST["submit"])){
 
 }
 else{
-    header("location: ../SignUp.php");
+    header("location: ../SignUp.php?error=none");
     exit();
 
 }

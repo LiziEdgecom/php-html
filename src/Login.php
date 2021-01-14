@@ -26,7 +26,7 @@ include_once 'Header.php'
 
 </div>
 <div class="row">
-    <input type="submit" value="Submit">
+    <input type="submit" name="submit" value="Log In">
 </div>
 
 
