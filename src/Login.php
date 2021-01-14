@@ -5,12 +5,12 @@ include_once 'Header.php'
 <div class = "login-form">
     <h2>Log in</h2>
 
-    <form action="login.inc.php" method="post">
+    <form action="includes/login.inc.php" method="post">
         <div class="col-25">
-            <label for="name" >Username or email</label>
+            <label for="User" >Username or email</label>
         </div>
         <div class="col-75">
-            <input type="text" name="email" placeholder="Usename/Email..">
+            <input type="text" name="UID" placeholder="Usename/Email..">
         </div>
 
 
@@ -20,14 +20,26 @@ include_once 'Header.php'
         <div class="col-75">
             <input type="password" name="pwd" placeholder="Password..">
         </div>
+        <?php
+        if(isset($_GET["error"])){
 
+            if($_GET["error"]=="emptyinput")  {
+                echo " <div class='error-message'><p >Fill in all fields!</p> </div>";
+            }
+            else if ($_GET["error"]=="wrongLogin"){
+                echo"<div class='error-message'><p >Incorrect login !</p></div>";
+            }
 
-    </form>
+        }
 
+        ?>
 </div>
 <div class="row">
     <input type="submit" name="submit" value="Log In">
 </div>
+    </form>
+
+
 
 
 

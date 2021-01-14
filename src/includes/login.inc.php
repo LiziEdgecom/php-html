@@ -3,14 +3,15 @@ include 'dbd.inc.php';
 include 'functions.inc.php';
 
 if(isset($_POST["submit"])){
-    $username = $_POST["uid"];
+    $username = $_POST["UID"];
     $pwd = $_POST["pwd"];
 
-    if(emptyInputSignup($username,$pwd)){
-        header("location: ../SignUp.php?error=emptyinput");
+    if(emptyInputLogin($username,$pwd)){
+        header("location: ../Login.php?error=emptyinput");
         exit();
 
     }
-    loginUser($conn,$username,$pwd);
 
+    loginUser($conn,$username,$pwd);
 }
+else{ header("location: ../Login.php");}

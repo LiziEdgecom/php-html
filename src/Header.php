@@ -1,3 +1,7 @@
+<?php
+ session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,12 +32,35 @@
             <li class="nav-item">
                 <a href="Contact.php" class="nav-link">Contact</a>
             </li>
-            <li class="nav-item">
-                <a href="SignUp.php" class="nav-link">Sign Up</a>
-            </li>
-            <li class="nav-item">
-                <a href="Login.php" class="nav-link">Log In</a>
-            </li>
+            <?php
+            if(isset($_SESSION["UID"])){
+
+                echo "
+                    <li class=\"nav-item\">
+                    <a href=\"Profile.php\" class=\"nav-link\">Profile page</a>
+                    </li>
+                ";
+                echo "
+                    <li class=\"nav-item\">
+                    <a href=\"includes/logout.inc.php\" class=\"nav-link\">Log out</a>
+                    </li>
+                ";
+
+            }else{
+                echo"
+                <li class=\"nav-item\">
+                <a href=\"SignUp.php\" class=\"nav-link\">Sign Up</a>
+                </li>";
+                echo"
+                <li class=\"nav-item\">
+                <a href=\"Login.php\" class=\"nav-link\">Log In</a>
+                 </li>
+                ";
+
+            }
+            ?>
+
+
         </ul>
     </div>
 
