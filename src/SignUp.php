@@ -44,25 +44,25 @@ include_once 'Header.php'
              if(isset($_GET["error"])){
 
                  if($_GET["error"]=="emptyinput")  {
-                     echo "<p >Fill in all fields!</p>";
+                  echo " <div class='error-message'><p >Fill in all fields!</p> </div>";
                  }
                  else if ($_GET["error"]=="invalidUid"){
-                     echo"<p >Choose a proper username!</p>";
+                     echo"<div class='error-message'><p >Choose a proper username!</p></div>";
                  }
                  else if ($_GET["error"]=="invalidEmail"){
-                     echo"<p >Choose a proper email!</p>";
+                     echo"<div class='error-message'><p >Choose a proper email!</p></div>";
                  }
                  else if ($_GET["error"]=="pwdNoMatch"){
-                     echo"<p >Password doesn't match!</p>";
+                     echo"<div class='error-message'><p >Password doesn't match!</p></div>";
                  }
                  else if ($_GET["error"]=="usernameTaken"){
-                     echo"<p >Choose a different Username!</p>";
+                     echo"<div class='error-message'><p >Choose a different Username!</p></div>";
                  }
                  else if ($_GET["error"]=="stmtFailed"){
-                     echo"<p >Something went wrong, try again!</p>";
+                     echo"<div class='error-message'><p >Something went wrong, try again!</p></div>";
                  }
                  else if ($_GET["error"]=="none"){
-                     echo"<p >You have signed up!</p>";
+                     echo"<div class='signed-up-succes'><p color='red' >You have signed up!</p>";
                  }
              }
 
