@@ -36,16 +36,14 @@ echo $_SESSION['userEmail'];
         }
 
     echo  $_user=$_SESSION['userID'];
-echo $UID ;
-echo   $userN;
-echo  $userE;
 
-if($conn->query('UPDATE users SET userName='. $userN .',userEmail= '. $userE .', UID = '.$UID.'  WHERE userID='. $_user .' ') ===TRUE){
-        //header("location: ../Profile.php?error=none");
+
+if($conn->query('UPDATE users SET userName = "'. $userN .'" , userEmail = "'. $userE .'" , UID = "'.$UID.'"   WHERE userID='. $_user .' ') ===TRUE){
+        header("location: ../Profile.php?error=none");
         exit();
     }
     else{
-      //  header("location: ../Profile.php?error=Wrong");
+     header("location: ../Profile.php?error=Wrong");
         echo "wrong";
         exit();
 

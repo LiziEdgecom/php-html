@@ -6,7 +6,7 @@
     <div class="banner-text">
     <p>FIVE FINGER DEATH PUNCH</p>
     </div>
-    <img src="./Images/ffdpMain.jpg" alt="Band wallpaper."/>
+    <img src="Images/img4.jpg" alt="Band wallpaper."/>
 
 </div>
 

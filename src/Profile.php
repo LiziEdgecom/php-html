@@ -3,7 +3,9 @@ include_once 'Header.php';
 include 'includes/modal.php';
 include 'includes/dbd.inc.php';
 
-
+if(!isset($_SESSION['userID'])){
+    header("location: Login.php");
+}
 
 $_user = $_SESSION['userID'];
 
@@ -84,8 +86,9 @@ else{echo"Something went wrong";}
 </div>
     </div>
     <div class="modal-footer">
-        <button  type="button" class="btn btn-secondary pull-right" data-dismiss="modal">Close</button>
-        <input type="submit" name="submit" value="Save changes">
+        <input type="submit" name="submit" value="Save changes" class="btn btn-secondary pull-right">
+
+
     </div>
     </form>
     </div>

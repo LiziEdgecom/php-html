@@ -8,9 +8,11 @@
     <base href="."/>
     <meta charset="UTF-8">
     <title>My unofficial website</title>
+    <link href="Styles/reset.css" rel="stylesheet"/>
+    <link href="Styles/galery.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
           crossorigin="anonymous">
-    <link href="Styles/layout.css" rel="stylesheet"/>
+  <link href="Styles/layout.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -24,22 +26,24 @@
             <li class="nav-item">
                 <a href="index.php" class="nav-link">Home</a>
             </li>
-            <li class="nav-item">
-                <a href="About.php" class="nav-link">About</a>
-            </li>
-            <li class="nav-item">
-                <a href="Albums.php" class="nav-link">Albums</a>
-            </li>
-            <li class="nav-item">
-                <a href="Contact.php" class="nav-link">Contact</a>
-            </li>
+
+
             <?php
             if(isset($_SESSION["UID"])){
 
-                echo "
+                echo "    
+    
+            <li class=\"nav-item\">
+                <a href=\"Galery.php\" class=\"nav-link\">Galery</a>
+            </li>
+            
+            <li class=\"nav-item\">
+                <a href=\"Aticles.php\" class=\"nav-link\">Articles</a>
+            </li>
                     <li class=\"nav-item\">
                     <a href=\"Profile.php\" class=\"nav-link\">Profile page</a>
-                    </li>
+                    </li> 
+                    
                 ";
                 echo "
                     <li class=\"nav-item\">
