@@ -146,13 +146,14 @@
     display: block;
     padding: 6px 10px;
     border-radius: 4px;
-    background-color: #111111;
+    background-color: white;
     position: fixed;
     top: 48vh;
     z-index:500;
     font-family: Arial,sans-serif;
     color: white;
     text-transform: uppercase;
+    cursor: pointer;
 
 }
 .img-btn-next :hover{
@@ -165,13 +166,14 @@
     display: block;
     padding: 6px 10px;
     border-radius: 4px;
-    background-color: #111111;
+    background-color: white;
     position: fixed;
     top: 48vh;
     z-index:500;
     font-family: Arial,sans-serif;
     color: white;
     text-transform: uppercase;
+    cursor: pointer;
 
 }
 .img-btn-prev :hover{
