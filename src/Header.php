@@ -38,7 +38,7 @@
             </li>
             
             <li class=\"nav-item\">
-                <a href=\"Aticles.php\" class=\"nav-link\">Articles</a>
+                <a href=\"Articles.php\" class=\"nav-link\">Articles</a>
             </li>
                     <li class=\"nav-item\">
                     <a href=\"Profile.php\" class=\"nav-link\">Profile page</a>
@@ -51,7 +51,7 @@
                     </li>
                 ";
 
-            }else{
+            }else {
                 echo"
                 <li class=\"nav-item\">
                 <a href=\"SignUp.php\" class=\"nav-link\">Sign Up</a>

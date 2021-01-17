@@ -109,7 +109,7 @@ function loginUser($conn,$username,$pwd){
         session_start();
         $_SESSION["userID"]= $uidExist["userID"];
         $_SESSION["UID"]= $uidExist["UID"];
-        $_SESSION["userEmail"]= $uidExist["email"];
+
 
         header("location:../index.php");
         exit();

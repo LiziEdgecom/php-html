@@ -89,6 +89,28 @@ html * {
     padding: 20px;
 
 }
+.messages{
+
+   height: 500px;
+   border:1px solid #ccc;
+    width: auto;
+    height: 55vw;
+    padding: 10px;
+    overflow-y: scroll;
+    background-color: #cccccc;
+    border-radius: 6px;
+}
+
+.entry{
+
+
+    width: 100%;
+    height: 100px;
+    background-color: beige;
+    resize: none;
+}
+
+
 .login-form {
     margin-top: 10%;
     margin-right: 30%;
