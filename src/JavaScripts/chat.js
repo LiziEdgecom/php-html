@@ -17,7 +17,7 @@ chat.fetchMessage = function () {
 chat.fetchMessage();
 chat.throwMessage = function(message){
     if($.trim(message).length != 0){
-        window.alert("giving Message");
+
         $.ajax({
             url: 'includes/Achat.php',
             type: 'POST',

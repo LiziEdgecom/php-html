@@ -30,7 +30,7 @@
 
             <?php
             if(isset($_SESSION["UID"])){
-
+                if($_SESSION["UID"]==='admin'){
                 echo "    
     
             <li class=\"nav-item\">
@@ -38,7 +38,26 @@
             </li>
             
             <li class=\"nav-item\">
-                <a href=\"Articles.php\" class=\"nav-link\">Articles</a>
+                <a href=\"Articles.php\" class=\"nav-link\">Discusion</a>
+            </li>
+                    <li class=\"nav-item\">
+                    <a href=\"Usesrs.php\" class=\"nav-link\">Users</a>
+                    </li> 
+                    
+                ";
+                echo "
+                    <li class=\"nav-item\">
+                    <a href=\"includes/logout.inc.php\" class=\"nav-link\">Log out</a>
+                    </li>
+                ";
+                }else{
+
+                    echo "       <li class=\"nav-item\">
+                <a href=\"Galery.php\" class=\"nav-link\">Galery</a>
+            </li>
+            
+            <li class=\"nav-item\">
+                <a href=\"Articles.php\" class=\"nav-link\">Discusion</a>
             </li>
                     <li class=\"nav-item\">
                     <a href=\"Profile.php\" class=\"nav-link\">Profile page</a>
@@ -50,7 +69,7 @@
                     <a href=\"includes/logout.inc.php\" class=\"nav-link\">Log out</a>
                     </li>
                 ";
-
+                }
             }else {
                 echo"
                 <li class=\"nav-item\">
