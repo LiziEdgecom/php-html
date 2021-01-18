@@ -3,7 +3,7 @@ require 'Core.php';
 class Chat extends Core{
     public function fetchMessages(){
         //query
-        $this->query("SELECT articles.data,
+       $this->query("SELECT articles.data,
                                    users.userID,
                                     users.UID
                                     FROM articles
@@ -12,6 +12,8 @@ class Chat extends Core{
                                     ORDER BY id DESC 
         ");
         return $this->rows();
+        //tu ti píšem ako / tvoj select ti da len jeden udaj jeden row
+
         //return rows
     }
 
