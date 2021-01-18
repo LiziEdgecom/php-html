@@ -4,9 +4,9 @@
 
 <div class="banner">
     <div class="banner-text">
-    <p>FIVE FINGER DEATH PUNCH</p>
+    <p>WELCOME TO MY FUNPAGE</p>
     </div>
-    <img src="Images/img4.jpg" alt="Band wallpaper."/>
+
 
 </div>
 

@@ -29,12 +29,12 @@ if(!isset($_SESSION['userID'])){
 </div>
 </div>
 
-<div class="container col-8 border p-4" style="height: calc(100vh - 50px)">
+<div class="container col-8 border p-4" style="height: 85vh ">
     <div
     <div class="d-flex mb-5 row border p-4">
         <form id="addForm" enctype="multipart/form-data" class="col-12" method="post">
             <div class="chat">
-                <textarea class="entry" placeholder="Do you want to say something?" id="text"
+                <textarea class="entry" placeholder="Do you want to say something? ..Press Enter to Upload." id="text"
                           name="text"></textarea>
             </div>
 
