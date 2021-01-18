@@ -1,5 +1,8 @@
 <?php
-include_once 'Header.php'
+include_once 'Header.php';
+if(isset($_SESSION['userID'])){
+    header("location: index.php");
+}
 ?>
 
     <div class = "signup-form">
