@@ -19,9 +19,9 @@ $data = mysqli_query($conn,'SELECT * FROM users where userID !='. $_user .' ');
         <table class="table">
             <thead class="thead-dark">
             <tr>
-                <th scope="col">Profile</th>
-                <th scope="col">Fields</th>
-                <th scope="col">Data</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">User Name</th>
                 <th scope="col"></th>
             </thead>
             <tbody>
@@ -32,8 +32,7 @@ $data = mysqli_query($conn,'SELECT * FROM users where userID !='. $_user .' ');
                 <td><?php  echo $row['userName'];    ?></td>
                 <td><?php  echo $row['userEmail'];    ?></td>
                 <td><?php  echo $row['UID'];    ?></td>
-                <td><a href="#"  data-role="delete" data-id="<?php echo $row['userID'] ;?>" >Delete</a></td>
-                <td><button type="button" id="button_delete" data-role="delete" data-id="<?php echo $row['userID'] ;?>" >Delete</button></td>
+                <td><button class="deleteButton" type="button"  onclick="deleteUser()" data-id="<?php echo $row['userID'] ;?>" >Delete</button></td>
             </tr>
 
         <?php
@@ -48,33 +47,7 @@ $data = mysqli_query($conn,'SELECT * FROM users where userID !='. $_user .' ');
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
-<script>
-
-
-    $(document).ready(function () {
-       $('#button').on('click',function (e) {
-           e.preventDefault();
-           alert("ajax start");
-           var id =  $(this).data('id');
-
-            $.ajax({
-                url: 'includes/delete.inc.php',
-                method : 'post',
-                data : {id},
-                success(function(){
-                    location.reload();
-                    }
-
-                )
-
-            })
-
-       })
-    })
-
-
-
-</script>
+<script src="JavaScripts/delete.js"></script>
 
 
 

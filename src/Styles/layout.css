@@ -197,4 +197,12 @@ input[type=submit]:hover {
     text-align: center;
 
 }
+.user-page{
+    margin-top: 5vw;
+    margin-left: 30%;
+    margin-right: 30%;
+    background-color: #a1a1a1;
+    text-align: center;
+
+}
 body{   }
