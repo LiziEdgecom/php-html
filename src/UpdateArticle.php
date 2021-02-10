@@ -1,8 +1,6 @@
 <?php
 include_once 'Header.php';
-if(isset($_SESSION['userID'])){
-    header("location: index.php");
-}
+
 ?>
 
 <div class = "login-form">
@@ -13,17 +11,7 @@ if(isset($_SESSION['userID'])){
             <label for="User" >Username or email</label>
         </div>
         <div class="col-75">
-            <?php
-            if(isset($_GET["username"])){
-                ?>
-                <input type="text" name="UID" value=<?php echo $_GET["username"] ?> >
-            <?php
-
-            }else{
-                ?> <input type="text" name="UID" placeholder="Usename/Email..">
-            <?php }
-            ?>
-
+            <input type="text" name="UID" placeholder="Usename/Email..">
         </div>
 
 
@@ -42,10 +30,6 @@ if(isset($_SESSION['userID'])){
             else if ($_GET["error"]=="wrongLogin"){
                 echo"<div class='error-message'><p >Incorrect login !</p></div>";
             }
-            else if ($_GET["error"]=="bannedLogin"){
-                echo "<div class='error-message'><p >User Banned ! Reason :  </p></div>" ;
-                ?><div class='error-message'><p ><?php echo $_GET["result"] ?></p></div><?php
-            }
 
         }
 
@@ -54,7 +38,7 @@ if(isset($_SESSION['userID'])){
 <div class="row">
     <input type="submit" name="submit" value="Log In">
 </div>
-    </form>
+</form>
 
 
 

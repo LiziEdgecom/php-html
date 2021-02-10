@@ -7,7 +7,7 @@ if(isset($_POST["submit"])){
     $pwd = $_POST["pwd"];
 
     if(emptyInputLogin($username,$pwd)){
-        header("location: ../Login.php?error=emptyinput");
+        header("location: ../Login.php?error=emptyinput&username=".$username."");
         exit();
 
     }

@@ -44,7 +44,7 @@ function pwdmatch($pwd,$pwdRepeat){
 function uidExist($conn,$username, $email){
     $sql = "SELECT * FROM users WHERE UID = ? OR userEmail = ? ; " ;
     $stmt = mysqli_stmt_init($conn);
-    echo "$username";
+
     if(!mysqli_stmt_prepare($stmt, $sql)){
         header("location: ../SignUp.php?error=stmtFailed");
         exit();
@@ -92,31 +92,92 @@ function emptyInputLogin($username,$pwd){
 
 function loginUser($conn,$username,$pwd){
     $uidExist = uidExist($conn,$username, $username);
+    $ban = isBannedLogin($conn,(int)$uidExist["userID"]);
+    $result = getWhyBanned($conn,(int)$uidExist["userID"]);
 
     if($uidExist === false){
-        header("location: ../Login.php?error=wrongLogin");
+        header("location: ../Login.php?error=wrongLogin&username=".$username." ");
     }
+
+
 
     $pwdHashed = $uidExist["userPwd"];
 
     $chceckPwd = password_verify($pwd,$pwdHashed);
 
     if($chceckPwd === false){
-        header("location: ../Login.php?error=wrongLogin");
+        header("location: ../Login.php?error=wrongLogin&username=".$username."");
 
     }
+
+    else if($ban===true){
+
+
+        header("location: ../Login.php?error=bannedLogin&result=".$result."&username=".$username." ");
+        exit();
+    }
     else if($chceckPwd === true){
+
+
+
         session_start();
         $_SESSION["userID"]= $uidExist["userID"];
         $_SESSION["UID"]= $uidExist["UID"];
-
-
         header("location:../index.php");
         exit();
+
+
+
     };
 
 }
+function getWhyBanned($conn,$username){
+    $sql = 'SELECT * FROM bans where bans.user= "'.$username.'" ' ;
+    $result = mysqli_query($conn,$sql);
+    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+        if((int)$row['user'] === $username){
+            return $row['reason'];
+        }
+}
+    return;
+}
 
+function isBannedLogin($conn,$user){
+
+    $sql = "SELECT * FROM bans " ;
+    $result = mysqli_query($conn,$sql);
+    if(! $result ) {
+        die('Could not get data: ' . mysqli_error());
+    }
+    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+        if((int)$row['user'] === $user){
+            return true;
+
+        }
+
+
+
+    }
+    return false;
+}
+
+
+function isBanned($conn,$userID){
+
+    $sql = "SELECT * FROM bans " ;
+    $result = mysqli_query($conn,$sql);
+    if(! $result ) {
+        die('Could not get data: ' . mysqli_error());
+    }
+    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+       if($row['user'] === $userID){
+           return true;
+       }
+
+
+    }
+    return false;
+}
 
 
 

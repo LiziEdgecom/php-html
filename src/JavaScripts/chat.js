@@ -4,9 +4,8 @@ var chat = {}
 
 
 chat.fetchMessage = function () {
-
     $.ajax({
-        url: 'includes/Achat.php',
+        url: 'chat/Achat.php',
         type: 'POST',
         data: {method :'fetch'},
         success: function (data) {
@@ -14,12 +13,39 @@ chat.fetchMessage = function () {
         }
     })
 }
+
 chat.fetchMessage();
+
+function deleteChat(id){
+
+    $.ajax({
+        url: 'chat/Achat.php',
+        type : 'POST',
+        data : {method :'delete',id},
+        success: function(result){
+            location.reload();
+        }
+    })
+
+}
+
+
+
+
+
+
+
+function redirect(id)
+{
+    var url = "http://localhost:63342/php/src/UpdateArticle.php?articleID="+id;
+    window.location.assign(url);
+}
+
 chat.throwMessage = function(message){
     if($.trim(message).length != 0){
 
         $.ajax({
-            url: 'includes/Achat.php',
+            url: 'chat/Achat.php',
             type: 'POST',
             data: {method :'throw', message: message},
             success: function (data) {
@@ -30,6 +56,10 @@ chat.throwMessage = function(message){
  }
 }
 
+
+
+
+
 chat.entry = $('.chat .entry');
 chat.entry.bind('keydown',function (e) {
    if(e.keyCode === 13 && e.shiftKey===false){
@@ -39,4 +69,4 @@ chat.entry.bind('keydown',function (e) {
    }
 })
 
-chat.interval = setInterval(chat.fetchMessage, 5000);
+//chat.interval = setInterval(chat.fetchMessage, 10000);

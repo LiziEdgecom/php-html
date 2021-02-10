@@ -4,11 +4,14 @@ class Chat extends Core{
     public function fetchMessages(){
         //query
        $this->query("SELECT articles.data,
+                                    articles.id,
                                    users.userID,
                                     users.UID
+                                    
                                     FROM articles
                                     JOIN users
                                     ON articles.UID = users.userID
+                                    LEFT JOIN bans b ON users.userID = b.user WHERE b.user is null
                                     ORDER BY id DESC 
         ");
         return $this->rows();
@@ -22,5 +25,15 @@ class Chat extends Core{
        $this->query("INSERT INTO articles (UID, data)
                           VALUES ( '" . (int)$userId . "' , '" . $this->db->real_escape_string(htmlentities($message)) . "')");
     }
+
+
+    public function deleteMessage($messageID){
+
+        $this->query("DELETE FROM articles where id = '" . (int)$messageID . "' ");
+
+    }
+
+    public function updateMessage(){}
+
 
 }
