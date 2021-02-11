@@ -3,7 +3,21 @@ require 'Core.php';
 class Chat extends Core{
     public function fetchMessages(){
         //query
-       $this->query("SELECT articles.data,
+        if($_SESSION['UID']==='admin'){
+            $this->query("SELECT articles.data,
+                                    articles.id,
+                                   users.userID,
+                                    users.UID                          
+                                    FROM articles
+                                    JOIN users
+                                    ON articles.UID = users.userID
+                                  
+                                    ORDER BY id DESC 
+        ");
+            return $this->rows();
+        }
+        else {
+            $this->query("SELECT articles.data,
                                     articles.id,
                                    users.userID,
                                     users.UID
@@ -14,9 +28,9 @@ class Chat extends Core{
                                     LEFT JOIN bans b ON users.userID = b.user WHERE b.user is null
                                     ORDER BY id DESC 
         ");
-        return $this->rows();
-        //tu ti píšem ako / tvoj select ti da len jeden udaj jeden row
-
+            return $this->rows();
+            //tu ti píšem ako / tvoj select ti da len jeden udaj jeden row
+        }
         //return rows
     }
 

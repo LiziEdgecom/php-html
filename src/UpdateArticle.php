@@ -1,45 +1,28 @@
 <?php
 include_once 'Header.php';
+require_once 'includes/dbd.inc.php';
+require_once 'includes/functions.inc.php';
+
+$text = getData($conn,(int)$_GET['articleID']);
 
 ?>
 
 <div class = "login-form">
-    <h2>Log in</h2>
+    <h2>Edit your text</h2>
 
-    <form action="includes/login.inc.php" method="post">
-        <div class="col-25">
-            <label for="User" >Username or email</label>
-        </div>
+    <form action="includes/updateArticle.inc.php?articleID=<?php echo $_GET['articleID'];?>" method="post">
+
         <div class="col-75">
-            <input type="text" name="UID" placeholder="Usename/Email..">
+            <textarea name="data" style="resize: none; height: 200px;" ><?php echo $text;?></textarea>
         </div>
+        <input type="text" name="ID" hidden value="<?php echo $_GET['articleID'];?>">
 
-
-        <div class="col-25">
-            <label for="pwd" >Password</label>
-        </div>
-        <div class="col-75">
-            <input type="password" name="pwd" placeholder="Password..">
-        </div>
-        <?php
-        if(isset($_GET["error"])){
-
-            if($_GET["error"]=="emptyinput")  {
-                echo " <div class='error-message'><p >Fill in all fields!</p> </div>";
-            }
-            else if ($_GET["error"]=="wrongLogin"){
-                echo"<div class='error-message'><p >Incorrect login !</p></div>";
-            }
-
-        }
-
-        ?>
+        <button type="submit" name="submit" class="btn btn-primary" >
+            UPDATE
+        </button>
 </div>
-<div class="row">
-    <input type="submit" name="submit" value="Log In">
-</div>
+
 </form>
-
 
 
 

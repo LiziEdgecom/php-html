@@ -247,4 +247,49 @@ input[type=submit]:hover {
     font-size: 16px;
 
 }
+.updateArticle {
+    align-items: normal;
+    background-color: rgba(0,0,0,0);
+    border-color: rgb(0, 0, 238);
+    border-style: none;
+    box-sizing: content-box;
+    color: rgb(0, 0, 238);
+    cursor: pointer;
+    display: inline;
+    font: inherit;
+    height: auto;
+    padding: 0;
+    perspective-origin: 0 0;
+    text-align: start;
+    text-decoration: underline;
+    transform-origin: 0 0;
+    width: auto;
+    -moz-appearance: none;
+    -webkit-logical-height: 1em;
+    -webkit-logical-width: auto;
+}
+.deleteArticle {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*optional*/
+    font-family: arial, sans-serif;
+    /*input has OS specific font-family*/
+    color: Turquoise;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.home-text{
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.75);
+    position: center;
+    border-style: solid;
+    border-width: medium;
+margin-top: 10px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+.home-text h2{
+    color: white;
+}
 body{   }

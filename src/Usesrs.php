@@ -58,8 +58,7 @@ $dataBan =mysqli_query($conn,'SELECT * FROM bans where "bans".user !='. $_user .
             </tbody>
         </table>
 </div>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 
 
 <script src="JavaScripts/User.js"></script>

@@ -9,8 +9,9 @@ if(isset($_SESSION['userID'])){
     <h2>Log in</h2>
 
     <form action="includes/login.inc.php" method="post">
+       <div style="height: 280px;">
         <div class="col-25">
-            <label for="User" >Username or email</label>
+            <label  >Username or email</label>
         </div>
         <div class="col-75">
             <?php
@@ -28,7 +29,7 @@ if(isset($_SESSION['userID'])){
 
 
         <div class="col-25">
-            <label for="pwd" >Password</label>
+            <label  >Password</label>
         </div>
         <div class="col-75">
             <input type="password" name="pwd" placeholder="Password..">
@@ -51,12 +52,12 @@ if(isset($_SESSION['userID'])){
 
         ?>
 </div>
-<div class="row">
+<div class="row"  >
     <input type="submit" name="submit" value="Log In">
 </div>
     </form>
 
-
+</div>
 
 
 

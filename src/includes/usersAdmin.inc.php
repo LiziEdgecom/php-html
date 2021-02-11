@@ -9,6 +9,7 @@ if(isset($_POST['method'])===true && empty($_POST['method'])===false) {
         $id = trim($_POST['id']);
         $sql1 = $conn->query('DELETE FROM articles WHERE UID = "' . $id . '"');
         if ($sql1) {
+            $sql3 = $conn->query('DELETE  FROM bans WHERE bans.user = "' . $id . '"  ');
             $sql2 = $conn->query('DELETE  FROM users WHERE userID = "' . $id . '"  ');
             if ($sql2) {
                 return 'data deleted';
@@ -17,9 +18,10 @@ if(isset($_POST['method'])===true && empty($_POST['method'])===false) {
 
     }
     else if($method === 'ban'){
-        $id = trim($_POST['id']);
+        $id = (int)trim($_POST['id']);
         $reason = trim($_POST['reason']);
-        $conn->query('INSERT INTO bans (reason, user)  VALUES ( "' . $reason . '" , "' . $id . '" ');
+
+        $conn->query('INSERT INTO bans (reason, user)  VALUES ( "'.$reason.'" , "'. $id .'") ');
     }
     else if ($method === 'unban') {
         $method = trim($_POST['method']);

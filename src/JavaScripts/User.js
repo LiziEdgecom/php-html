@@ -34,6 +34,7 @@ function banUser(){
                 data : {method :'ban', id , reason},
                 success: function(result){
                     location.reload();
+                    alert("User banned");
                 }
             })
 
@@ -54,7 +55,7 @@ function unbanUser(){
                 data : {method :'unban',id },
                 success: function(result){
                     location.reload();
-                    alert("User banned");
+
                 }
             })
 

@@ -15,23 +15,23 @@ if(isset($_POST["submit"])){
 
 
     if(emptyInputSignup($name,$email,$username,$pwd,$pwdRepeat) !== false){
-        header("location: ../SignUp.php?error=emptyinput");
+        header("location: ../SignUp.php?error=emptyinput&name=".$name."&email=".$email."&username=".$username."");
         exit();
     }
     if(invalidUid($username) !== false){
-        header("location: ../SignUp.php?error=invalidUid");
+        header("location: ../SignUp.php?error=invalidUid&name=".$name."&email=".$email."&username=".$username."");
         exit();
     }
     if(invalidEmail($email) !== false){
-        header("location: ../SignUp.php?error=invalidEmail");
+        header("location: ../SignUp.php?error=invalidEmail&name=".$name."&email=".$email."&username=".$username."");
         exit();
     }
     if(pwdmatch($pwd,$pwdRepeat) !== false){
-        header("location: ../SignUp.php?error=pwdNoMatch");
+        header("location: ../SignUp.php?error=pwdNoMatch&name=".$name."&email=".$email."&username=".$username."");
         exit();
     }
     if(uidExist($conn,$username,$email) !== false){
-        header("location: ../SignUp.php?error=usernameTaken");
+        header("location: ../SignUp.php?error=usernameTaken&name=".$name."&email=".$email."&username=".$username."");
         exit();
     }
     createUser($conn,$name,$email,$username,$pwd);

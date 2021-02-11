@@ -3,6 +3,9 @@ include_once 'Header.php';
 if(isset($_SESSION['userID'])){
     header("location: index.php");
 }
+
+
+
 ?>
 
     <div class = "signup-form">
@@ -12,23 +15,65 @@ if(isset($_SESSION['userID'])){
             <div class="col-25">
                 <label for="name" >Full name</label>
             </div>
-            <div class="col-75">
-                 <input type="text" name="name" placeholder="Your name..">
+             <?php
+             if(isset($_GET["error"]) && isset($_GET["name"])){
+              ?>
+                 <div class="col-75">
+                     <input type="text" name="name" value= "<?php  echo $_GET["name"]; ?>" >
+                 </div>
+             <?php
+             }
+             else{
+                ?>
+                 <div class="col-75">
+                     <input type="text" name="name" placeholder="Your name..">
+                 </div>
+                 <?php
+             }
+             ?>
+             <div class="col-25">
+                 <label for="email" >Email adress</label>
+             </div>
+             <?php
+             if(isset($_GET["error"]) && isset($_GET["email"])){
+                 ?>
+                 <div class="col-75">
+                     <input type="text" name="email" value= "<?php  echo $_GET["email"]; ?>" >
+                 </div>
+                 <?php
+             }
+             else{
+                 ?>
+                 <div class="col-75">
+                     <input type="text" name="email" placeholder="Email..">
+                 </div>
+                 <?php
+             }
+             ?>
+
+             <div class="col-25">
+                 <label for="UID" >Username</label>
              </div>
 
-            <div class="col-25">
-                <label for="email" >Email adress</label>
-            </div>
-            <div class="col-75">
-                <input type="text" name="email" placeholder="Email..">
-            </div>
 
-            <div class="col-25">
-                <label for="UID" >Username</label>
-            </div>
-            <div class="col-75">
-                <input type="text" name="UID" placeholder="Nick..">
-            </div>
+
+             <?php
+             if(isset($_GET["error"]) && isset($_GET["username"])){
+                 ?>
+                 <div class="col-75">
+                     <input type="text" name="UID" value= "<?php  echo $_GET["username"]; ?>" >
+                 </div>
+                 <?php
+             }
+             else{
+                 ?>
+                 <div class="col-75">
+                     <input type="text" name="UID" placeholder="Nick..">
+                 </div>
+                 <?php
+             }
+             ?>
+
 
             <div class="col-25">
                 <label for="pwd" >Password</label>

@@ -1,5 +1,12 @@
 <?php
-
+/**
+ * @param $name
+ * @param $email
+ * @param $username
+ * @param $pwd
+ * @param $pwdRepeat
+ * @return bool|null
+ */
 function emptyInputSignup($name,$email,$username,$pwd,$pwdRepeat){
     $result=null;
     if(empty($name)||empty($email)||empty($username)||empty($pwd)||empty($pwdRepeat)){
@@ -129,6 +136,15 @@ function loginUser($conn,$username,$pwd){
 
 
     };
+
+}
+
+function getData($conn,$articleID){
+    $sql = 'SELECT data FROM articles where articles.id= "'.$articleID.'" ' ;
+    $result = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    return $row['data'];
+
 
 }
 function getWhyBanned($conn,$username){
