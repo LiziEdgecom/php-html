@@ -37,8 +37,8 @@ function deleteChat(id){
 
 function redirect(id)
 {
-    var url = "http://localhost:63342/php/src/UpdateArticle.php?articleID="+id;
-    window.location.assign(url);
+    var url = "UpdateArticle.php?articleID="+id;
+    document.location.href = url;
 }
 
 chat.throwMessage = function(message){
